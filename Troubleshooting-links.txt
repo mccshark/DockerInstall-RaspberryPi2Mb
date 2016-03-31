@@ -1,0 +1,13 @@
+Debian Distro
+https://www.debian.org/distrib/
+Docker setup Instructions
+https://docs.docker.com/engine/installation/linux/debian/
+https://docs.docker.com/engine/installation/linux/debian/#debian-jessie-80-64-bit
+
+Troubleshooting Links
+http://ccm.net/faq/809-debian-apt-get-no-pubkey-gpg-error
+https://forums.docker.com/t/unable-to-find-install-docker-engine/3795
+http://vi.stackexchange.com/questions/3761/how-can-i-check-if-vim-is-32-bit-or-64-bit-on-linux
+https://www.atlantic.net/community/howto/32-bit-or-64-bit-on-linux/
+https://linuxconfig.org/check-what-debian-version-you-are-running-on-your-linux-system
+http://raspberrypi.stackexchange.com/questions/34715/is-raspbian-for-the-raspberry-pi-2-b-32-bit-or-a-64-bit-os
