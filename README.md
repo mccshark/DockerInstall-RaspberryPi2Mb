@@ -6,8 +6,9 @@ All notes and error messages are based on Noobs Debian installation.  Errors are
 
 Included are the following:
 
-1. A shell script associated with Docker link above.
-2. Output from terminal - where my executed Bash commands are bolded and errors are highlighted in yellow.
+1. A shell script for clean install of Docker using instructions for link above.
+2. Non-working Shell script for Raspberry Pi 2 Model B - and abbreviated error messages.
+2. Output from terminal session - Bash commands are bolded and errors messages highlighted in yellow.
 3. A short list of some of the setup links for Debian, Docker, and troubleshooting (RTF format)
 3. A short list of some of the setup links for Debian, Docker, and troubleshooting (TXT format)
 
