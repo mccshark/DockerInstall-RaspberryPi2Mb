@@ -1,0 +1,277 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red255\green251\blue149;}
+\margl1440\margr1440\vieww15100\viewh17000\viewkind0
+\deftab720
+\pard\pardeftab720\sl580\partightenfactor0
+
+\f0\b\fs48 \cf0 \expnd0\expndtw0\kerning0
+pi@raspberrypi:~ $ apt-get install apt-transport-https ca-certificates
+\b0\fs28 \
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied) \
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root? \
+pi@raspberrypi:~ $ su apt-get install apt-transport-https ca-certificates \
+No passwd entry for user 'apt-get' \
+pi@raspberrypi:~ $\'a0 \
+pi@raspberrypi:~ $ su apt-get install apt-transport-https ca-certificates raspberry \
+No passwd entry for user 'apt-get' \
+pi@raspberrypi:~ $ exit \
+logout \
+Connection to 10.0.1.44 closed. \
+MacBookAir-2:~ kevinmccauley$ ssh pi@10.0.1.44 \
+pi@10.0.1.44's password:\'a0 \
+\
+The programs included with the Debian GNU/Linux system are free software; \
+the exact distribution terms for each program are described in the \
+individual files in /usr/share/doc/*/copyright. \
+\
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent \
+permitted by applicable law. \
+Last login: Thu Mar 31 10:59:59 2016 from 10.0.1.5 \
+pi@raspberrypi:~ $ su - \
+Password:\'a0 \
+su: Authentication failure \
+pi@raspberrypi:~ $ su - \
+Password:\'a0 \
+su: Authentication failure \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\b \cf0 pi@raspberrypi:~ $ sudo apt-get install apt-transport-https ca-certificates
+\b0 \
+Reading package lists... Done \
+Building dependency tree \'a0 \'a0 \'a0\'a0 \
+Reading state information... Done \
+ca-certificates is already the newest version. \
+The following NEW packages will be installed: \
+\'a0 apt-transport-https \
+0 upgraded, 1 newly installed, 0 to remove and 70 not upgraded. \
+Need to get 134 kB of archives. \
+After this operation, 185 kB of additional disk space will be used. \
+Do you want to continue? [Y/n] y \
+Get:1 http://mirrordirector.raspbian.org/raspbian/ jessie/main apt-transport-https armhf 1.0.9.8.2 [134 kB] \
+0% [1 apt-transport-https 0 B/134 kB 0%] \
+Fetched 134 kB in 1s (71.4 kB/s) \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Selecting previously unselected package apt-transport-https. \
+(Reading database ... 127349 files and directories currently installed.) \
+Preparing to unpack .../apt-transport-https_1.0.9.8.2_armhf.deb ... \
+Unpacking apt-transport-https (1.0.9.8.2) ... \
+Setting up apt-transport-https (1.0.9.8.2) ... \
+pi@raspberrypi:~ $ apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D \
+Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --homedir /tmp/tmp.5313LFE7l1 --no-auto-check-trustdb --trust-model always --keyring /etc/apt/trusted.gpg --primary-keyring /etc/apt/trusted.gpg --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D \
+gpg: requesting key 2C52609D from hkp server p80.pool.sks-keyservers.net \
+gpg: no writable keyring found: eof \
+gpg: error reading `[stream]': general error \
+gpg: Total number processed: 0 \
+pi@raspberrypi:~ $ /etc/apt/sources.list.d/docker.list \
+-bash: /etc/apt/sources.list.d/docker.list: No such file or directory \
+pi@raspberrypi:~ $ nano /etc/apt/sources.list.d/docker.list \
+pi@raspberrypi:~ $ su nano lsb_release -a \
+su: invalid option -- 'a' \
+Usage: su [options] [LOGIN] \
+\
+Options: \
+\'a0 -c, --command COMMAND\'a0 \'a0 \'a0 \'a0 \'a0pass COMMAND to the invoked shell \
+\'a0 -h, --help\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 display this help message and exit \
+\'a0 -, -l, --login\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 make the shell a login shell \
+\'a0 -m, -p, \
+\'a0 --preserve-environment\'a0 \'a0 \'a0 \'a0 do not reset environment variables, and \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 keep the same shell \
+\'a0 -s, --shell SHELL\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0use SHELL instead of the default in passwd \
+\
+
+\b pi@raspberrypi:~ $ lsb_release -a
+\b0 \
+No LSB modules are available. \
+Distributor ID:\'a0 \'a0 Raspbian \
+Description:\'a0 \'a0 Raspbian GNU/Linux 8.0 (jessie) \
+Release:\'a0 \'a0 8.0 \
+Codename:\'a0 \'a0 jessie \
+\
+
+\b pi@raspberrypi:/ $ sudo apt-get update
+\b0 \
+Hit http://archive.raspberrypi.org jessie InRelease \
+Hit http://mirrordirector.raspbian.org jessie InRelease \
+Get:1 https://apt.dockerproject.org debian-jessie InRelease [454 B] \
+Ign https://apt.dockerproject.org debian-jessie InRelease \
+Get:2 https://apt.dockerproject.org debian-jessie Release.gpg [801 B] \
+Get:3 https://apt.dockerproject.org debian-jessie Release [19.7 kB] \
+Ign https://apt.dockerproject.org debian-jessie Release \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Hit http://archive.raspberrypi.org jessie/main armhf Packages \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Hit http://mirrordirector.raspbian.org jessie/main armhf Packages \
+Get:4 https://apt.dockerproject.org debian-jessie/main armhf Packages [454 B] \
+Get:5 https://apt.dockerproject.org debian-jessie/main Translation-en_US [454 B] \
+Hit http://mirrordirector.raspbian.org jessie/contrib armhf Packages \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Hit http://archive.raspberrypi.org jessie/ui armhf Packages \'a0 \'a0 \
+Get:6 https://apt.dockerproject.org debian-jessie/main Translation-en [454 B] \
+Hit http://mirrordirector.raspbian.org jessie/non-free armhf Packages \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Hit http://mirrordirector.raspbian.org jessie/rpi armhf Packages \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Get:7 https://apt.dockerproject.org debian-jessie/main armhf Packages [454 B] \
+Get:8 https://apt.dockerproject.org debian-jessie/main Translation-en_US [454 B] \'a0 \'a0 \'a0 \'a0\'a0 \
+Get:9 https://apt.dockerproject.org debian-jessie/main Translation-en [454 B] \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Get:10 https://apt.dockerproject.org debian-jessie/main armhf Packages [454 B] \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Get:11 https://apt.dockerproject.org debian-jessie/main Translation-en_US [454 B] \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Get:12 https://apt.dockerproject.org debian-jessie/main Translation-en [454 B] \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Get:13 https://apt.dockerproject.org debian-jessie/main armhf Packages [454 B] \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Get:14 https://apt.dockerproject.org debian-jessie/main Translation-en_US [454 B] \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Get:15 https://apt.dockerproject.org debian-jessie/main Translation-en [454 B] \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Get:16 https://apt.dockerproject.org debian-jessie/main armhf Packages [454 B] \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf0 \cb2 Err https://apt.dockerproject.org debian-jessie/main armhf Packages \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0\cb1 \
+\cb2 \'a0 HttpError403\cb1 \
+Get:17 https://apt.dockerproject.org debian-jessie/main Translation-en_US [454 B] \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Ign https://apt.dockerproject.org debian-jessie/main Translation-en_US \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Get:18 https://apt.dockerproject.org debian-jessie/main Translation-en [454 B] \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Ign https://apt.dockerproject.org debian-jessie/main Translation-en \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Ign http://archive.raspberrypi.org jessie/main Translation-en_US \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Ign http://archive.raspberrypi.org jessie/main Translation-en \'a0 \'a0 \'a0 \
+Ign http://archive.raspberrypi.org jessie/ui Translation-en_US \
+Ign http://archive.raspberrypi.org jessie/ui Translation-en \
+Ign http://mirrordirector.raspbian.org jessie/contrib Translation-en_US \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Ign http://mirrordirector.raspbian.org jessie/contrib Translation-en \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Ign http://mirrordirector.raspbian.org jessie/main Translation-en_US \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Ign http://mirrordirector.raspbian.org jessie/main Translation-en \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Ign http://mirrordirector.raspbian.org jessie/non-free Translation-en_US \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Ign http://mirrordirector.raspbian.org jessie/non-free Translation-en \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Ign http://mirrordirector.raspbian.org jessie/rpi Translation-en_US \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Ign http://mirrordirector.raspbian.org jessie/rpi Translation-en \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Fetched 20.5 kB in 12s (1,591 B/s) \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+\cb2 W: GPG error: https://apt.dockerproject.org debian-jessie Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY F76221572C52609D\cb1 \
+\cb2 W: Failed to fetch https://apt.dockerproject.org/repo/dists/debian-jessie/main/binary-armhf/Packages\'a0 HttpError403\cb1 \
+\
+\cb2 E: Some index files failed to download. They have been ignored, or old ones used instead.\cb1 \
+pi@raspberrypi:/ $ gpg --keyserver pgpkeys.mit.edu --recv-key\'a0 F76221572C52609D\'a0 \
+gpg: directory `/home/pi/.gnupg' created \
+gpg: new configuration file `/home/pi/.gnupg/gpg.conf' created \
+\cb2 gpg: WARNING: options in `/home/pi/.gnupg/gpg.conf' are not yet active during this run\cb1 \
+gpg: keyring `/home/pi/.gnupg/secring.gpg' created \
+gpg: keyring `/home/pi/.gnupg/pubring.gpg' created \
+gpg: requesting key 2C52609D from hkp server pgpkeys.mit.edu \
+gpg: /home/pi/.gnupg/trustdb.gpg: trustdb created \
+gpg: key 2C52609D: public key "Docker Release Tool (releasedocker) <docker@docker.com>" imported \
+\cb2 gpg: no ultimately trusted keys found\cb1 \
+gpg: Total number processed: 1 \
+gpg:\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0imported: 1\'a0 (RSA: 1) \
+pi@raspberrypi:/ 
+\b $ gpg -a --export F76221572C52609D | sudo apt-key add -
+\b0  \
+OK \
+pi@raspberrypi:/ $ 
+\b sudo apt-get update
+\b0  \
+Hit http://mirrordirector.raspbian.org jessie InRelease \
+Hit http://archive.raspberrypi.org jessie InRelease \
+Get:1 https://apt.dockerproject.org debian-jessie InRelease [442 B] \
+Ign https://apt.dockerproject.org debian-jessie InRelease \'a0 \
+Get:2 https://apt.dockerproject.org debian-jessie Release.gpg [801 B] \
+Hit https://apt.dockerproject.org debian-jessie Release \
+Hit http://archive.raspberrypi.org jessie/main armhf Packages \'a0 \'a0 \'a0 \'a0\'a0 \
+Hit http://archive.raspberrypi.org jessie/ui armhf Packages \
+Hit http://mirrordirector.raspbian.org jessie/main armhf Packages \
+Hit http://mirrordirector.raspbian.org jessie/contrib armhf Packages \
+Hit http://mirrordirector.raspbian.org jessie/non-free armhf Packages \
+Hit http://mirrordirector.raspbian.org jessie/rpi armhf Packages \
+Ign http://archive.raspberrypi.org jessie/main Translation-en_US \'a0\'a0 \
+Ign http://archive.raspberrypi.org jessie/main Translation-en \'a0 \'a0 \'a0 \
+Ign http://archive.raspberrypi.org jessie/ui Translation-en_US \'a0 \'a0\'a0 \
+Ign http://archive.raspberrypi.org jessie/ui Translation-en \'a0 \'a0 \'a0 \'a0 \
+Ign http://mirrordirector.raspbian.org jessie/contrib Translation-en_US \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Ign http://mirrordirector.raspbian.org jessie/contrib Translation-en \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Ign http://mirrordirector.raspbian.org jessie/main Translation-en_US \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Ign http://mirrordirector.raspbian.org jessie/main Translation-en \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Ign http://mirrordirector.raspbian.org jessie/non-free Translation-en_US \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Ign http://mirrordirector.raspbian.org jessie/non-free Translation-en \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Ign http://mirrordirector.raspbian.org jessie/rpi Translation-en_US \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+Ign http://mirrordirector.raspbian.org jessie/rpi Translation-en \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\'a0 \
+Fetched 801 B in 14s (55 B/s) \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+\cb2 W: Failed to fetch https://apt.dockerproject.org/repo/dists/debian-jessie/Release\'a0 Unable to find expected entry 'main/binary-armhf/Packages' in Release file (Wrong sources.list entry or malformed file)\cb1 \
+\
+\cb2 E: Some index files failed to download. They have been ignored, or old ones used instead.\cb1 \
+pi@raspberrypi:/ \
+\
+$ 
+\b sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+\b0  \
+Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --homedir /tmp/tmp.l5fWXgVvaO --no-auto-check-trustdb --trust-model always --keyring /etc/apt/trusted.gpg --primary-keyring /etc/apt/trusted.gpg --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D \
+gpg: requesting key 2C52609D from hkp server p80.pool.sks-keyservers.net \
+gpg: key 2C52609D: "Docker Release Tool (releasedocker) <docker@docker.com>" not changed \
+gpg: Total number processed: 1 \
+gpg:\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 unchanged: 1 \
+\
+pi@raspberrypi:/\'a0$ 
+\b sudo apt-get install docker-engine
+\b0  \
+Reading package lists... Done \
+Building dependency tree \'a0 \'a0 \'a0\'a0 \
+Reading state information... Done \
+\cb2 E: Unable to locate package docker-engine\cb1 \
+pi@raspberrypi:/ $ 
+\b sudo service docker start
+\b0  \
+\cb2 Failed to start docker.service: Unit docker.service failed to load: No such file or directory.\cb1 \
+pi@raspberrypi:/ $ 
+\b uname -r
+\b0  \
+4.1.17-v7+ \
+\
+pi@raspberrypi:~ $ 
+\b lsb_release -a
+\b0  \
+No LSB modules are available. \
+Distributor ID:\'a0 \'a0 Raspbian \
+Description:\'a0 \'a0 Raspbian GNU/Linux 8.0 (jessie) \
+Release:\'a0 \'a0 8.0 \
+Codename:\'a0 \'a0 jessie \
+\
+pi@raspberrypi:/ $ 
+\b cat /etc/issue
+\b0  \
+Raspbian GNU/Linux 8 \\n \\l \
+\
+pi@raspberrypi:/ $ 
+\b cat /etc/debian_version
+\b0  \
+8.0 \
+\
+pi@raspberrypi:/ $ 
+\b uname -a
+\b0  \
+Linux raspberrypi 4.1.17-v7+ #838 SMP Tue Feb 9 13:15:09 GMT 2016 armv7l GNU/Linux \
+\
+pi@raspberrypi:/ $ sudo apt-get install lsb-release \
+Reading package lists... Done \
+Building dependency tree \'a0 \'a0 \'a0\'a0 \
+Reading state information... Done \
+lsb-release is already the newest version. \
+lsb-release set to manually installed. \
+0 upgraded, 0 newly installed, 0 to remove and 70 not upgraded. \
+pi@raspberrypi:/ $ 
+\b lsb_release -da
+\b0  \
+No LSB modules are available. \
+Distributor ID:\'a0 \'a0 Raspbian \
+Description:\'a0 \'a0 Raspbian GNU/Linux 8.0 (jessie) \
+Release:\'a0 \'a0 8.0 \
+Codename:\'a0 \'a0 jessie \
+pi@raspberrypi:/ $\'a0 \
+\
+pi@raspberrypi:/ $ 
+\b cat /etc/issue
+\b0  \
+Raspbian GNU/Linux 8 \\n \\l \
+\
+pi@raspberrypi:/ $ 
+\b cat /etc/debian_version
+\b0  \
+8.0 \
+\
+pi@raspberrypi:/ $ 
+\b lsb_release -da
+\b0  \
+No LSB modules are available. \
+Distributor ID:\'a0 \'a0 Raspbian \
+Description:\'a0 \'a0 Raspbian GNU/Linux 8.0 (jessie) \
+Release:\'a0 \'a0 8.0 \
+Codename:\'a0 \'a0 jessie \
+\
+}
